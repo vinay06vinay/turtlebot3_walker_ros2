@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(turtblebot3_walker)
+project(turtlebot3_walker_ros2)
 
 # Default to C++14
 if(NOT CMAKE_CXX_STANDARD)
@@ -27,13 +27,9 @@ ament_target_dependencies(walker
   geometry_msgs
   sensor_msgs
 )
-rosidl_get_typesupport_target(cpp_typesupport_target ${PROJECT_NAME}
-"rosidl_typesupport_cpp" 
-)
-target_link_libraries(walker "${cpp_typesupport_target}")
 
 install(TARGETS
-  talker
+  walker
   DESTINATION lib/${PROJECT_NAME})
 install(DIRECTORY 
   launch
